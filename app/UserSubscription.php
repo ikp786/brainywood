@@ -1,0 +1,22 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class UserSubscription extends Model
+{
+
+	protected $table = 'user_subscriptions';
+
+	public function user()
+	{
+		return $this->belongsTo(User::class, 'user_id');
+	}
+
+	public function subscription()
+	{
+		return $this->belongsTo(Subscription::class, 'subscription_id');
+	}
+
+}
